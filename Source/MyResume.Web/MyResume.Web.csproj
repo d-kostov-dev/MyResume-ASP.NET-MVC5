@@ -165,7 +165,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -235,6 +234,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyResume.Common\MyResume.Common.csproj">
+      <Project>{4741a2f8-95f6-4da5-adcc-03d5cf4a7cc3}</Project>
+      <Name>MyResume.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyResume.Contracts\MyResume.Contracts.csproj">
+      <Project>{136a85d4-7b82-4afc-930b-785a84482d1a}</Project>
+      <Name>MyResume.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyResume.Data\MyResume.Data.csproj">
+      <Project>{31939852-00ec-44df-9a26-e443682ef2e7}</Project>
+      <Name>MyResume.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyResume.Infrastructure\MyResume.Infrastructure.csproj">
+      <Project>{558543cc-fa2b-4224-b9e5-781193ed3de7}</Project>
+      <Name>MyResume.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyResume.Models\MyResume.Models.csproj">
+      <Project>{70e2b007-586e-445d-888b-5a963dbdd087}</Project>
+      <Name>MyResume.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

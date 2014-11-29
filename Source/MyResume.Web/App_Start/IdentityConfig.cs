@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using MyResume.Web.Models;
+using MyResume.Models;
+using MyResume.Data;
 
 namespace MyResume.Web
 {

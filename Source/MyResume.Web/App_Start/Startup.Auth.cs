@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using MyResume.Web.Models;
+using MyResume.Models;
+using MyResume.Data;
 
 namespace MyResume.Web
 {

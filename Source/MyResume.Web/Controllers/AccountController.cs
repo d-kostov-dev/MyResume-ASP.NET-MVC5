@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MyResume.Web.Models;
+using MyResume.Models;
 
 namespace MyResume.Web.Controllers
 {
