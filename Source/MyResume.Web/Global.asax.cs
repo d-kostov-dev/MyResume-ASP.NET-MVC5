@@ -1,5 +1,7 @@
 ﻿namespace MyResume.Web
 {
+    using MyResume.Infrastructure.Mapping;
+    using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Optimization;
@@ -16,6 +18,9 @@
 
             // Additional
             ViewEnginesConfig.RegisterViewEngines(ViewEngines.Engines);
+
+            var autoMapperConfig = new AutoMapperConfig(Assembly.GetExecutingAssembly());
+            autoMapperConfig.Execute();
         }
     }
 }
