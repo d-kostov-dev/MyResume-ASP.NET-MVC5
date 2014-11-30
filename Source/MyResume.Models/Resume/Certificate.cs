@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class Certificate :AuditInfo
+    public class Certificate : AuditInfo
     {
         [Key]
         public int Id { get; set; }
@@ -20,7 +20,7 @@
 
         public int IssueYear { get; set; }
 
-        public string URL { get; set; }
+        public string InstitutionSite { get; set; }
 
         public int ImageId { get; set; }
 

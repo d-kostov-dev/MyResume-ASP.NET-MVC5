@@ -9,7 +9,7 @@
 
         [Required]
         [StringLength(50, MinimumLength = 2)]
-        public string Place { get; set; }
+        public string School { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 2)]
@@ -29,6 +29,6 @@
 
         public virtual Image Image { get; set; }
 
-        public string URL { get; set; }
+        public string SchoolSite { get; set; }
     }
 }

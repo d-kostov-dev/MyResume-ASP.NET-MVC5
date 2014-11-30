@@ -55,12 +55,20 @@
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Base\AuditInfo.cs" />
     <Compile Include="Base\IAuditInfo.cs" />
-    <Compile Include="Education.cs" />
-    <Compile Include="Experience.cs" />
+    <Compile Include="Blog\Category.cs" />
+    <Compile Include="Blog\Post.cs" />
+    <Compile Include="Blog\Tag.cs" />
+    <Compile Include="Resume\Certificate.cs" />
+    <Compile Include="Resume\Course.cs" />
+    <Compile Include="Resume\Education.cs" />
+    <Compile Include="Resume\Experience.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ContactInformation.cs" />
-    <Compile Include="Skill.cs" />
+    <Compile Include="Resume\ContactInformation.cs" />
+    <Compile Include="Resume\Project.cs" />
+    <Compile Include="Resume\Recommendation.cs" />
+    <Compile Include="Resume\Skill.cs" />
+    <Compile Include="SiteSetting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
