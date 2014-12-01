@@ -9,17 +9,38 @@
             return this.View();
         }
 
-        public ActionResult About()
+        public ActionResult Experience()
         {
-            ViewBag.Message = "Your application description page.";
-
             return this.View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Projects()
         {
-            ViewBag.Message = "Your contact page.";
+            return this.View();
+        }
 
+        public ActionResult Education()
+        {
+            return this.View();
+        }
+
+        public ActionResult Skills()
+        {
+            return this.View();
+        }
+
+        public ActionResult Courses()
+        {
+            return this.View();
+        }
+
+        public ActionResult Certifications()
+        {
+            return this.View();
+        }
+
+        public ActionResult Recommendations()
+        {
             return this.View();
         }
     }

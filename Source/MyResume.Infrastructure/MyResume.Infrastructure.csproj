@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="HtmlHelpers\Buttons.cs" />
     <Compile Include="HtmlHelpers\FormGroups.cs" />
+    <Compile Include="HtmlHelpers\MenuLinkHelper.cs" />
     <Compile Include="Mapping\AutoMapperConfig.cs" />
     <Compile Include="Mapping\IHaveCustomMappings.cs" />
     <Compile Include="Mapping\IMapFrom.cs" />
