@@ -6,13 +6,13 @@
 
     public static class MenuLinkHelper
     {
-        public static MvcHtmlString MenuLink(this HtmlHelper helper, string text, string action, string controller)
+        public static MvcHtmlString MenuLink(this HtmlHelper helper, string text, string action, string controller, string area = "")
         {
             var routeData = helper.ViewContext.RouteData.Values;
 
             var currentController = routeData["controller"];
             var currentAction = routeData["action"];
-            
+
             var listItem = new TagBuilder("li");
 
             if (string.Equals(action, currentAction as string, StringComparison.OrdinalIgnoreCase) &&
@@ -21,7 +21,7 @@
                 listItem.AddCssClass("active");
             }
 
-            listItem.InnerHtml += helper.ActionLink(text, action, controller);
+            listItem.InnerHtml += helper.ActionLink(text, action, controller, new { area = area }, null);
 
             return new MvcHtmlString(listItem.ToString());
         }
