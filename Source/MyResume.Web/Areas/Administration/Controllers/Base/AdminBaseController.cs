@@ -4,15 +4,18 @@
     using System.Web.Mvc;
 
     using MyResume.Common;
+    using MyResume.Web.Services.Contracts;
 
     [Authorize(Roles = GlobalConstants.AdminRole)]
     public class AdminBaseController : Controller
     {
+        private IBaseService baseService;
         private IDictionary<string, string> settings;
 
-        public AdminBaseController()
+        public AdminBaseController(IBaseService baseService)
         {
-            this.settings = this.GetSettings();
+            this.baseService = baseService;
+            this.settings = this.LoadSettings();
         }
 
         public string GetSetting(string key)
@@ -27,13 +30,12 @@
             return result;
         }
 
-        private IDictionary<string, string> GetSettings()
+        private IDictionary<string, string> LoadSettings()
         {
-            ////var settingsList = this.Data.SiteSettings.All().ToDictionary(x => x.Name, x => x.Value);
-            ////this.ViewBag.Settings = settingsList;
-            ////return settingsList;
+            var settingsList = this.baseService.GetSettings();
+            this.ViewBag.Settings = settingsList;
 
-            return null;
+            return settingsList;
         }
     }
 }

@@ -180,7 +180,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\ViewEnginesConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
-    <Compile Include="Areas\Administration\Controllers\AdminBaseController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Base\AdminBaseController.cs" />
     <Compile Include="Areas\Administration\Controllers\DashboardController.cs" />
     <Compile Include="Controllers\AccountController.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
@@ -197,6 +197,10 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Base\BaseService.cs" />
+    <Compile Include="Services\Contracts\IBaseService.cs" />
+    <Compile Include="Services\Contracts\IDashboardService.cs" />
+    <Compile Include="Services\DashboardService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -272,7 +276,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -14,6 +14,8 @@ namespace MyResume.Web.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using MyResume.Web.Services.Contracts;
+    using MyResume.Web.Services;
 
     public static class NinjectWebCommon 
     {
@@ -54,6 +56,8 @@ namespace MyResume.Web.App_Start
             kernel.Bind<IDataProvider>()
                     .To<DataProvider>()
                     .WithConstructorArgument("context", c => new ApplicationDbContext());
+
+            kernel.Bind<IDashboardService>().To<DashboardService>();
         }        
     }
 }
