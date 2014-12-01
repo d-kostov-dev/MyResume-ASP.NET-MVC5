@@ -6,7 +6,10 @@
     <title>@ViewBag.Title - My Resume</title>
 
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/animations")
     @Styles.Render("~/Content/custom")
+
+    @RenderSection("styles", required: false)
 </head>
 
 <body>
@@ -32,7 +35,7 @@
                 </div>
                 <a href="~/Contacts/Index" class="btn btn-primary btn-block">Contact Me</a>
             </div>
-            <div class="col-md-9 panel panel-default">
+            <div class="col-md-9 panel panel-default animated fadeInUp">
                 @RenderBody()
             </div>
         </div>
@@ -53,6 +56,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
