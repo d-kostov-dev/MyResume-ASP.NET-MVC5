@@ -13,17 +13,17 @@
             var currentController = routeData["controller"];
             var currentAction = routeData["action"];
             
-            var liTag = new TagBuilder("li");
+            var listItem = new TagBuilder("li");
 
             if (string.Equals(action, currentAction as string, StringComparison.OrdinalIgnoreCase) &&
                string.Equals(controller, currentController as string, StringComparison.OrdinalIgnoreCase))
             {
-                liTag.AddCssClass("active");
+                listItem.AddCssClass("active");
             }
 
-            liTag.InnerHtml += helper.ActionLink(text, action, controller);
+            listItem.InnerHtml += helper.ActionLink(text, action, controller);
 
-            return new MvcHtmlString(liTag.ToString());
+            return new MvcHtmlString(listItem.ToString());
         }
     }
 }
