@@ -20,20 +20,24 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-stacked">
-                                @Html.MenuLink("About", "Index", "Home")
-                                @Html.MenuLink("Experience", "Experience", "Home")
-                                @Html.MenuLink("Projects", "Projects", "Home")
-                                @Html.MenuLink("Education", "Education", "Home")
-                                @Html.MenuLink("Skills", "Skills", "Home")
-                                @Html.MenuLink("Courses", "Courses", "Home")
-                                @Html.MenuLink("Certifications", "Certifications", "Home")
-                                @Html.MenuLink("Recommendations", "Recommendations", "Home")
-                                @Html.MenuLink("Blog", "Index", "Blog")
+                                <li><a href="/">Site Home</a></li>
+                                @Html.MenuLink("Dashboard", "Index", "Dashboard")
+                                @Html.MenuLink("About", "Index", "About")
+                                @Html.MenuLink("Experience", "Experience", "Experience")
+                                @Html.MenuLink("Projects", "Projects", "Projects")
+                                @Html.MenuLink("Education", "Education", "Education")
+                                @Html.MenuLink("Skills", "Skills", "Skills")
+                                @Html.MenuLink("Courses", "Courses", "Courses")
+                                @Html.MenuLink("Certifications", "Certifications", "Certifications")
+                                @Html.MenuLink("Recommendations", "Recommendations", "Recommendations")
+                                @Html.MenuLink("Posts", "Index", "Posts")
+                                @Html.MenuLink("Categories", "Index", "Categories")
+                                @Html.MenuLink("Tags", "Index", "Tags")
                             </ul>
                         </div>
                     </div>
                 </div>
-                <a href="~/Contacts/Index" class="btn btn-primary btn-block">Contact Me</a>
+                <a href="~/Account/LogOff" class="btn btn-primary btn-block">Log Off</a>
             </div>
             <div class="col-md-9 panel panel-default animated fadeInUp">
                 @RenderBody()
@@ -45,11 +49,6 @@
         <div class="container">
             <hr />
             <div class="row">
-                <div class="col-md-6">
-                    <p class="text-muted text-center">Made By <a href="#">Dimitar Kostov</a> | Powered By <a href="http://www.asp.net/mvc">ASP.NET MVC</a> </p>
-                </div>
-                <div class="col-md-6">
-                </div>
             </div>
         </div>
     </div>

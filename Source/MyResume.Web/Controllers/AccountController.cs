@@ -342,13 +342,20 @@ namespace MyResume.Web.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
             return RedirectToAction("Index", "Home");
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult LogOff()
+        //{
+        //    AuthenticationManager.SignOut();
+        //    return RedirectToAction("Index", "Home");
+        //}
 
         [AllowAnonymous]
         public ActionResult ExternalLoginFailure()
