@@ -58,6 +58,7 @@ namespace MyResume.Web.App_Start
                     .WithConstructorArgument("context", c => new ApplicationDbContext());
 
             kernel.Bind<IDashboardService>().To<DashboardService>();
+            kernel.Bind<ISiteSettingsService>().To<SiteSettingsService>();
         }        
     }
 }
