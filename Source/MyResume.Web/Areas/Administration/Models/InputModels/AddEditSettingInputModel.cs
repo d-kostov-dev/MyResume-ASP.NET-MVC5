@@ -1,6 +1,6 @@
 ﻿namespace MyResume.Web.Areas.Administration.Models.InputModels
 {
-    public class AddSettingInputModel
+    public class AddEditSettingInputModel
     {
         public string Name { get; set; }
     }

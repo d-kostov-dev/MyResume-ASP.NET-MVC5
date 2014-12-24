@@ -22,7 +22,8 @@ namespace MyResume.Web.Areas.Administration.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var itemsList = services.GetAll();
+            return View(itemsList);
         }
 
         public ActionResult Create()
@@ -32,7 +33,7 @@ namespace MyResume.Web.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(AddSettingInputModel input)
+        public ActionResult Create(AddEditSettingInputModel input)
         {
             return this.RedirectToAction("Index");
         }
