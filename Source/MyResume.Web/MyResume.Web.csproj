@@ -194,6 +194,7 @@
     <Compile Include="Areas\Administration\Controllers\SiteSettingsController.cs" />
     <Compile Include="Areas\Administration\Controllers\SkillsController.cs" />
     <Compile Include="Areas\Administration\Controllers\TagsController.cs" />
+    <Compile Include="Areas\Administration\Models\InputModels\AddSettingInputModel.cs" />
     <Compile Include="Controllers\AccountController.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
@@ -253,6 +254,11 @@
     <Content Include="Areas\Administration\Views\Skills\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Tags\Index.cshtml" />
     <Content Include="Areas\Administration\Views\SiteSettings\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\SiteSettings\CreatePartial.cshtml" />
+    <Content Include="Areas\Administration\Views\SiteSettings\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_ModalLayout.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_AddEditLayout.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_PageHeadingPartial.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -261,6 +267,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\loadModalPartial.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -312,7 +319,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

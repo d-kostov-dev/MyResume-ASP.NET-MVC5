@@ -1,0 +1,8 @@
+﻿@model MyResume.Web.Areas.Administration.Models.InputModels.AddSettingInputModel
+
+@{
+    Layout = "../Shared/_AddEditLayout.cshtml";
+    ViewBag.Title = "Add Setting";
+}
+
+@Html.FormGroupFor(model => model.Name)

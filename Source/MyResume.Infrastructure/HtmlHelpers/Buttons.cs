@@ -6,11 +6,23 @@
 
     public static class Buttons
     {
-        public static MvcHtmlString CreateButton(this HtmlHelper htmlHelper, string text = null)
+        private const string modalEventClass = "showModal";
+
+        public static MvcHtmlString CreateButton(this HtmlHelper htmlHelper, string text = null, bool isModal = false)
         {
             if (string.IsNullOrEmpty(text))
             {
-                text = "Create New";
+                text = "Create";
+            }
+
+            return PrimaryButton(htmlHelper, text, "Create", null, isModal);
+        }
+
+        public static MvcHtmlString CreateButtonModal(this HtmlHelper htmlHelper, string text = null)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                text = "Create";
             }
 
             return PrimaryButton(htmlHelper, text, "Create");
@@ -40,13 +52,17 @@
             this HtmlHelper htmlHelper,
             string text,
             string action,
-            object routeValues = null)
+            object routeValues = null,
+            bool isModal = false)
         {
+            var classValues = 
+                string.Format("btn btn-primary {0}", isModal == true ? modalEventClass : string.Empty);
+
             return htmlHelper.ActionLink(
                 text,
                 action,
                 routeValues,
-                new { @class = "btn btn-primary" });
+                new { @class = classValues});
         }
 
         public static MvcHtmlString DangerButton(
@@ -75,6 +91,16 @@
                 new { @class = "btn btn-success" });
         }
 
+        public static MvcHtmlString SubmitButton(this HtmlHelper helper, string value, object htmlAttributes = null)
+        {
+            var submitButton = new TagBuilder("input");
+            submitButton.AddCssClass("btn btn-primary");
+            submitButton.Attributes.Add("type", "submit");
+            submitButton.Attributes.Add("value", value);
+            submitButton.ApplyAttributes(htmlAttributes);
+            return new MvcHtmlString(submitButton.ToString());
+        }
+
         public static MvcHtmlString DefaultButton(
             this HtmlHelper htmlHelper,
             string text,
@@ -86,16 +112,6 @@
                 action,
                 routeValues,
                 new { @class = "btn btn-default" });
-        }
-
-        public static MvcHtmlString SubmitButton(this HtmlHelper helper, string value, object htmlAttributes = null)
-        {
-            var submitButton = new TagBuilder("input");
-            submitButton.AddCssClass("btn btn-primary");
-            submitButton.Attributes.Add("type", "submit");
-            submitButton.Attributes.Add("value", value);
-            submitButton.ApplyAttributes(htmlAttributes);
-            return new MvcHtmlString(submitButton.ToString());
         }
 
         private static void ApplyAttributes(this TagBuilder tagBuilder, object htmlAttributes)
