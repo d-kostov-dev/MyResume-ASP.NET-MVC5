@@ -18,16 +18,6 @@
             return PrimaryButton(htmlHelper, text, "Create", null, isModal);
         }
 
-        public static MvcHtmlString CreateButtonModal(this HtmlHelper htmlHelper, string text = null)
-        {
-            if (string.IsNullOrEmpty(text))
-            {
-                text = "Create";
-            }
-
-            return PrimaryButton(htmlHelper, text, "Create");
-        }
-
         public static MvcHtmlString EditButton(this HtmlHelper htmlHelper, int id, string text = null)
         {
             if (string.IsNullOrEmpty(text))
