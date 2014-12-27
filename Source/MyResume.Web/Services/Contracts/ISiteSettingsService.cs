@@ -1,10 +1,19 @@
-﻿using MyResume.Web.Areas.Administration.Models.ViewModels;
-using System.Collections.Generic;
-
-namespace MyResume.Web.Services.Contracts
+﻿namespace MyResume.Web.Services.Contracts
 {
+    using System.Collections.Generic;
+    using MyResume.Web.Areas.Administration.Models.ViewModels;
+    using MyResume.Web.Areas.Administration.Models.InputModels;
+
     public interface ISiteSettingsService : IBaseService
     {
-        IEnumerable<SiteSettingsViewModel> GetAll();
+        IEnumerable<SiteSettingsViewModel> GetAllSettings();
+
+        AddEditSettingInputModel GetSettingById(int id);
+
+        void AddSetting(AddEditSettingInputModel input);
+
+        void SaveSetting(AddEditSettingInputModel input);
+
+        void DeleteSetting(int id);
     }
 }

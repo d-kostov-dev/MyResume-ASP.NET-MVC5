@@ -18,14 +18,14 @@
             return PrimaryButton(htmlHelper, text, "Create", null, isModal);
         }
 
-        public static MvcHtmlString EditButton(this HtmlHelper htmlHelper, int id, string text = null)
+        public static MvcHtmlString EditButton(this HtmlHelper htmlHelper, int id, string text = null, bool isModal = false)
         {
             if (string.IsNullOrEmpty(text))
             {
                 text = "Edit";
             }
 
-            return PrimaryButton(htmlHelper, text, "Edit", new { id = id });
+            return PrimaryButton(htmlHelper, text, "Edit", new { id = id }, isModal);
         }
 
         public static MvcHtmlString DeleteButton(this HtmlHelper htmlHelper, int id, string text = null)
@@ -35,7 +35,11 @@
                 text = "Delete";
             }
 
-            return DangerButton(htmlHelper, text, "Delete", new { id = id });
+            return htmlHelper.ActionLink(
+                text,
+                "Delete",
+                new { id = id },
+                new { @class = "btn btn-danger", onclick = "return confirm('Are you sure you wish to delete this Item?');" });
         }
 
         public static MvcHtmlString PrimaryButton(

@@ -197,6 +197,7 @@
     <Compile Include="Areas\Administration\Controllers\SiteSettingsController.cs" />
     <Compile Include="Areas\Administration\Controllers\SkillsController.cs" />
     <Compile Include="Areas\Administration\Controllers\TagsController.cs" />
+    <Compile Include="Areas\Administration\Models\Base\BaseModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditSettingInputModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\SiteSettingsViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs">
@@ -259,8 +260,7 @@
     <Content Include="Areas\Administration\Views\Skills\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Tags\Index.cshtml" />
     <Content Include="Areas\Administration\Views\SiteSettings\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\SiteSettings\CreatePartial.cshtml" />
-    <Content Include="Areas\Administration\Views\SiteSettings\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\SiteSettings\CreateEditPartial.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_ModalLayout.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_AddEditLayout.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_PageHeadingPartial.cshtml" />

@@ -1,0 +1,13 @@
+﻿@model MyResume.Web.Areas.Administration.Models.InputModels.AddEditSettingInputModel
+
+@{
+    Layout = "../Shared/_AddEditLayout.cshtml";
+    ViewBag.Title = "Add Setting";
+}
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@Html.HiddenFor(model => model.Id)
+
+@Html.FormGroupFor(model => model.Name)
+@Html.FormGroupFor(model => model.Value)
+@Html.FormGroupFor(model => model.Description)

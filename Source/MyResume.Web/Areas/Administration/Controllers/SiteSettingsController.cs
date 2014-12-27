@@ -22,25 +22,49 @@ namespace MyResume.Web.Areas.Administration.Controllers
 
         public ActionResult Index()
         {
-            var itemsList = services.GetAll();
+            var itemsList = services.GetAllSettings();
             return View(itemsList);
         }
 
         public ActionResult Create()
         {
-            return PartialView("CreatePartial");
+            return PartialView("CreateEditPartial");
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(AddEditSettingInputModel input)
         {
+            if (ModelState.IsValid)
+            {
+                this.services.AddSetting(input);
+            }
+
             return this.RedirectToAction("Index");
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-            return View();
+            var model = this.services.GetSettingById(id);
+            return PartialView("CreateEditPartial", model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(AddEditSettingInputModel input)
+        {
+            if (ModelState.IsValid)
+            {
+                this.services.SaveSetting(input);
+            }
+
+            return this.RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            this.services.DeleteSetting(id);
+            return this.RedirectToAction("Index");
         }
     }
 }
