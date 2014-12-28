@@ -49,14 +49,14 @@
             object routeValues = null,
             bool isModal = false)
         {
-            var classValues = 
+            var classValues =
                 string.Format("btn btn-primary {0}", isModal == true ? modalEventClass : string.Empty);
 
             return htmlHelper.ActionLink(
                 text,
                 action,
                 routeValues,
-                new { @class = classValues});
+                new { @class = classValues });
         }
 
         public static MvcHtmlString DangerButton(

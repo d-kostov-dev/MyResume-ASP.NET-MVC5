@@ -198,6 +198,7 @@
     <Compile Include="Areas\Administration\Controllers\SkillsController.cs" />
     <Compile Include="Areas\Administration\Controllers\TagsController.cs" />
     <Compile Include="Areas\Administration\Models\Base\BaseModel.cs" />
+    <Compile Include="Areas\Administration\Models\InputModels\AddEditEducationInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditSettingInputModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\SiteSettingsViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs">
@@ -231,6 +232,7 @@
     <Compile Include="Services\Contracts\ICategoriesService.cs" />
     <Compile Include="Services\Contracts\IDashboardService.cs" />
     <Compile Include="Services\DashboardService.cs" />
+    <Compile Include="Services\EducationsService.cs" />
     <Compile Include="Services\SiteSettingsService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

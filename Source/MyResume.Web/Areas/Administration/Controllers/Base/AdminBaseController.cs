@@ -9,12 +9,12 @@
     [Authorize(Roles = GlobalConstants.AdminRole)]
     public class AdminBaseController : Controller
     {
-        private IBaseService baseService;
+        private IBaseService baseDataProvider;
         private IDictionary<string, string> settings;
 
-        public AdminBaseController(IBaseService baseService)
+        public AdminBaseController(IBaseService dataProvider)
         {
-            this.baseService = baseService;
+            this.baseDataProvider = dataProvider;
             this.settings = this.LoadSettings();
         }
 
@@ -32,7 +32,7 @@
 
         private IDictionary<string, string> LoadSettings()
         {
-            var settingsList = this.baseService.GetSettings();
+            var settingsList = this.baseDataProvider.GetSettings();
             this.ViewBag.Settings = settingsList;
 
             return settingsList;

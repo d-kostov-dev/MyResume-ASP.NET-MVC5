@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace MyResume.Web.Areas.Administration.Controllers
+﻿namespace MyResume.Web.Areas.Administration.Controllers
 {
-    public class EducationController : Controller
+    using MyResume.Web.Services.Contracts;
+    using System.Web.Mvc;
+
+    public class EducationController : AdminBaseController
     {
-        // GET: Administration/Education
+        private IEducationsService dataProvider;
+
+        public EducationController(IEducationsService provider)
+            : base(provider)
+        {
+            this.dataProvider = provider;
+        }
+
         public ActionResult Index()
         {
             return View();

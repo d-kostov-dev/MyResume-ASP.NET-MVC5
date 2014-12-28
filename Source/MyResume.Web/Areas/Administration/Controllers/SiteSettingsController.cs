@@ -1,34 +1,33 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-using MyResume.Web.Areas.Administration.Models.InputModels;
-using MyResume.Web.Services.Contracts;
-
-namespace MyResume.Web.Areas.Administration.Controllers
+﻿namespace MyResume.Web.Areas.Administration.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+
+    using MyResume.Web.Areas.Administration.Models.InputModels;
+    using MyResume.Web.Services.Contracts;
+
     public class SiteSettingsController : AdminBaseController
     {
-        private ISiteSettingsService services;
+        private ISiteSettingsService dataProvider;
 
-        public SiteSettingsController(ISiteSettingsService servicesProvider)
-            : base(servicesProvider)
+        public SiteSettingsController(ISiteSettingsService provider)
+            : base(provider)
         {
-            this.services = servicesProvider;
+            this.dataProvider = provider;
         }
 
         public ActionResult Index()
         {
-            var itemsList = services.GetAllSettings();
+            var itemsList = this.dataProvider.GetAllSettings();
             return View(itemsList);
         }
 
         public ActionResult Create()
         {
-            return PartialView("CreateEditPartial");
+            return this.PartialView("CreateEditPartial");
         }
 
         [HttpPost]
@@ -37,7 +36,7 @@ namespace MyResume.Web.Areas.Administration.Controllers
         {
             if (ModelState.IsValid)
             {
-                this.services.AddSetting(input);
+                this.dataProvider.AddSetting(input);
             }
 
             return this.RedirectToAction("Index");
@@ -45,8 +44,8 @@ namespace MyResume.Web.Areas.Administration.Controllers
 
         public ActionResult Edit(int id)
         {
-            var model = this.services.GetSettingById(id);
-            return PartialView("CreateEditPartial", model);
+            var model = this.dataProvider.GetSettingById(id);
+            return this.PartialView("CreateEditPartial", model);
         }
 
         [HttpPost]
@@ -55,7 +54,7 @@ namespace MyResume.Web.Areas.Administration.Controllers
         {
             if (ModelState.IsValid)
             {
-                this.services.SaveSetting(input);
+                this.dataProvider.SaveSetting(input);
             }
 
             return this.RedirectToAction("Index");
@@ -63,7 +62,7 @@ namespace MyResume.Web.Areas.Administration.Controllers
 
         public ActionResult Delete(int id)
         {
-            this.services.DeleteSetting(id);
+            this.dataProvider.DeleteSetting(id);
             return this.RedirectToAction("Index");
         }
     }

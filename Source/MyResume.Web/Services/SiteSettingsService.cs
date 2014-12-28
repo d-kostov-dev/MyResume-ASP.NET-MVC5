@@ -48,18 +48,26 @@
             var dbModel = Mapper.Map<SiteSetting>(input);
 
             var settingToEdit = this.Data.SiteSettings.Find(dbModel.Id);
-            settingToEdit.Value = input.Value;
-            settingToEdit.Description = input.Description;
 
-            this.Data.SaveChanges();
+            if (settingToEdit != null)
+            {
+                settingToEdit.Value = input.Value;
+                settingToEdit.Description = input.Description;
+
+                this.Data.SaveChanges();
+            }
         }
 
 
         public void DeleteSetting(int id)
         {
             var settingToDelete = this.Data.SiteSettings.Find(id);
-            this.Data.SiteSettings.Delete(settingToDelete);
-            this.Data.SaveChanges();
+
+            if (settingToDelete != null)
+            {
+                this.Data.SiteSettings.Delete(settingToDelete);
+                this.Data.SaveChanges();
+            }
         }
     }
 }
