@@ -1,3 +1,3 @@
-﻿@model FileContentResult
+﻿@model int
 
-<img src="@Model.FileContents" class="img-responsive center-block" />
+<img src="@Url.Action("GetImageById","Images", new { id = Model}, null)" class="img-responsive center-block" />

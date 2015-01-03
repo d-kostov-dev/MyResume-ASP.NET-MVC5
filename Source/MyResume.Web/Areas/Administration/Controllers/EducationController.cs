@@ -28,7 +28,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(AddEditEducationInputModel input, HttpPostedFileBase fileUploaded)
+        public ActionResult Create(AddEditEducationInputModel input)
         {
             if (ModelState.IsValid)
             {
@@ -46,7 +46,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(AddEditEducationInputModel input, HttpPostedFileBase fileUploaded)
+        public ActionResult Edit(AddEditEducationInputModel input)
         {
             if (ModelState.IsValid)
             {

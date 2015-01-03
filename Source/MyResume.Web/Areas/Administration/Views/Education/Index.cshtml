@@ -10,10 +10,10 @@
 {
     columns.Add(x => x.Id)
         .Titled("Image")
-        .RenderValueAs(x => Html.Action("ShowImage", "Images", new { id = x.ImageId}))
+        .RenderValueAs(x => Html.Action("ShowImage", "Images", new { id = x.ImageId }))
         .Encoded(false)
         .Sanitized(false);
-    
+
     columns.Add(x => x.School)
         .Sortable(true);
 
@@ -24,12 +24,15 @@
         .Sortable(true);
 
     columns.Add(x => x.FromYear)
+        .Titled("From")
         .Sortable(true);
 
     columns.Add(x => x.ToYear)
+       .Titled("To")
        .Sortable(true);
 
     columns.Add(x => x.SchoolSite)
+       .Titled("Site")
        .Sortable(true);
 
     // Buttons
@@ -39,7 +42,6 @@
         .RenderValueAs(x => Html.EditButton(x.Id, isModal: true))
         .SetWidth(50);
 
-    //Deleting Settings is not allowed
     columns.Add()
         .Encoded(false)
         .Sanitized(false)
@@ -47,17 +49,3 @@
         .SetWidth(50);
 
 }).WithPaging(10)
-
-
-
-@*@helper GetImage(int? id)
-{
-    if (id != null)
-    {
-        <img src="@Url.Action("GetImageById", "Images", new { id = id })" class="img-responsive center-block" />
-    }
-    else
-    {
-        <img src="~/Content/imgs/default.png" class="img-responsive center-block" />
-    }
-}*@

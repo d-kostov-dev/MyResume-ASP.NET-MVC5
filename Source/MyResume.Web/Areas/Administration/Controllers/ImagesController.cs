@@ -15,7 +15,6 @@
             this.dataProvider = provider;
         }
 
-        [ChildActionOnly]
         public ActionResult GetImageById(int id)
         {
             var image = this.dataProvider.GetImageById(id);
@@ -25,15 +24,14 @@
                 throw new HttpException(404, "Image not found");
             }
 
-            var fileToReturn = File(image.Content, "image/" + image.FileExtension);
-            return this.PartialView("_SelectedImage", fileToReturn);
+            return File(image.Content, "image/" + image.FileExtension);
         }
 
         public ActionResult ShowImage(int? id)
         {
             if (id != null)
             {
-                return this.GetImageById(id.Value);
+                return this.PartialView("_SelectedImage", id);
             }
             else
             {

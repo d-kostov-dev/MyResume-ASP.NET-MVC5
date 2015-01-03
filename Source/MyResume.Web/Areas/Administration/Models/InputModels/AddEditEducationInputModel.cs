@@ -34,5 +34,9 @@
 
         [Display(Name = "School Site URL")]
         public string SchoolSite { get; set; }
+
+        public HttpPostedFileBase FileUploaded { get; set; }
+
+        public int? ImageId { get; set; }
     }
 }
