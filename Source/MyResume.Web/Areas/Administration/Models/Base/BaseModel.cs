@@ -9,7 +9,6 @@
 
         public DateTime? ModifiedOn { get; set; }
 
-        [Index]
         public DateTime? DeletedOn { get; set; }
     }
 }

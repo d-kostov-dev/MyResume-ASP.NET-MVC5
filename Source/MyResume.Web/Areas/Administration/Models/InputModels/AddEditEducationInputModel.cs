@@ -1,12 +1,12 @@
 ﻿namespace MyResume.Web.Areas.Administration.Models.InputModels
 {
     using System.ComponentModel.DataAnnotations;
-
-    using MyResume.Models;
-    using MyResume.Infrastructure.Mapping;
-    using MyResume.Web.Areas.Administration.Models.Base;
     using System.Web;
 
+    using MyResume.Infrastructure.Mapping;
+    using MyResume.Models;
+    using MyResume.Web.Areas.Administration.Models.Base;
+    
     public class AddEditEducationInputModel : BaseModel,  IMapFrom<Education>
     {
         public int? Id { get; set; }
@@ -30,7 +30,5 @@
         public int ToYear { get; set; }
 
         public string SchoolSite { get; set; }
-
-        public HttpPostedFileBase Image { get; set; }
     }
 }

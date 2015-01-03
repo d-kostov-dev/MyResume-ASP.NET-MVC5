@@ -59,6 +59,8 @@ namespace MyResume.Web.App_Start
 
             kernel.Bind<IDashboardService>().To<DashboardService>();
             kernel.Bind<ISiteSettingsService>().To<SiteSettingsService>();
+            kernel.Bind<IEducationsService>().To<EducationsService>();
+            kernel.Bind<IImagesService>().To<ImagesService>();
         }        
     }
 }

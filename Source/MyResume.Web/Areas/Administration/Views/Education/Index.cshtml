@@ -1,5 +1,63 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@model IEnumerable<MyResume.Web.Areas.Administration.Models.ViewModels.EducationViewModel>
+
+@{
+    ViewBag.Title = "Education";
 }
 
-<h2>Education</h2>
+@Html.Partial("_PageHeadingPartial")
+
+@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(x => x.Id)
+        .Titled("Image")
+        .RenderValueAs(x => Html.Action("ShowImage", "Images", new { id = x.ImageId}))
+        .Encoded(false)
+        .Sanitized(false);
+    
+    columns.Add(x => x.School)
+        .Sortable(true);
+
+    columns.Add(x => x.Field)
+        .Sortable(true);
+
+    columns.Add(x => x.Degree)
+        .Sortable(true);
+
+    columns.Add(x => x.FromYear)
+        .Sortable(true);
+
+    columns.Add(x => x.ToYear)
+       .Sortable(true);
+
+    columns.Add(x => x.SchoolSite)
+       .Sortable(true);
+
+    // Buttons
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .RenderValueAs(x => Html.EditButton(x.Id, isModal: true))
+        .SetWidth(50);
+
+    //Deleting Settings is not allowed
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .RenderValueAs(x => Html.DeleteButton(x.Id))
+        .SetWidth(50);
+
+}).WithPaging(10)
+
+
+
+@*@helper GetImage(int? id)
+{
+    if (id != null)
+    {
+        <img src="@Url.Action("GetImageById", "Images", new { id = id })" class="img-responsive center-block" />
+    }
+    else
+    {
+        <img src="~/Content/imgs/default.png" class="img-responsive center-block" />
+    }
+}*@

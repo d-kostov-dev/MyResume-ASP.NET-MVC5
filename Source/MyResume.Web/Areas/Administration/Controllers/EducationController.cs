@@ -15,7 +15,13 @@
 
         public ActionResult Index()
         {
-            return View();
+            var itemsList = this.dataProvider.GetAllEducations();
+            return View(itemsList);
+        }
+
+        public ActionResult Create()
+        {
+            return this.PartialView("CreateEditPartial");
         }
     }
 }

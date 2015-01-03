@@ -24,18 +24,5 @@
             var settingsList = this.Data.SiteSettings.All().ToDictionary(x => x.Name, x => x.Value);
             return settingsList;
         }
-
-
-        public ActionResult GetImageById(int id)
-        {
-            var image = this.Data.Images.Find(id);
-
-            //if (image != null)
-            //{
-            //    return this.File(image.Content, "image/" + image.FileExtension);
-            //}
-
-            return null;
-        }
     }
 }

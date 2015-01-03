@@ -191,6 +191,7 @@
     <Compile Include="Areas\Administration\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Administration\Controllers\EducationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ExperienceController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
     <Compile Include="Areas\Administration\Controllers\PostsController.cs" />
     <Compile Include="Areas\Administration\Controllers\ProjectsController.cs" />
     <Compile Include="Areas\Administration\Controllers\RecommendationsController.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Areas\Administration\Models\Base\BaseModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditEducationInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditSettingInputModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\EducationViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\SiteSettingsViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
@@ -218,6 +220,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Base\BaseService.cs" />
     <Compile Include="Services\Contracts\IBaseService.cs" />
+    <Compile Include="Services\Contracts\IImagesService.cs" />
     <Compile Include="Services\Contracts\ISiteSettingsService.cs" />
     <Compile Include="Services\Contracts\ITagsService.cs" />
     <Compile Include="Services\Contracts\ISkillsService.cs" />
@@ -233,6 +236,7 @@
     <Compile Include="Services\Contracts\IDashboardService.cs" />
     <Compile Include="Services\DashboardService.cs" />
     <Compile Include="Services\EducationsService.cs" />
+    <Compile Include="Services\ImagesService.cs" />
     <Compile Include="Services\SiteSettingsService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -240,6 +244,7 @@
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\imgs\default.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -269,6 +274,9 @@
     <Content Include="Grid.mvc.readme" />
     <Content Include="Areas\Administration\Views\Shared\_Grid.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_GridPager.cshtml" />
+    <Content Include="Areas\Administration\Views\Education\CreateEditPartial.cshtml" />
+    <Content Include="Areas\Administration\Views\Image\_DefaultImage.cshtml" />
+    <Content Include="Areas\Administration\Views\Image\_SelectedImage.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />

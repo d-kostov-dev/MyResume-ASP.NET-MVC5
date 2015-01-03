@@ -8,7 +8,5 @@
     public interface IBaseService
     {
         IDictionary<string, string> GetSettings();
-
-        ActionResult GetImageById(int id);
     }
 }

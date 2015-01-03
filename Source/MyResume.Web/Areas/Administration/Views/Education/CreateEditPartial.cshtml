@@ -1,0 +1,17 @@
+﻿@model MyResume.Web.Areas.Administration.Models.InputModels.AddEditEducationInputModel
+
+@{
+    Layout = "../Shared/_AddEditLayout.cshtml";
+    ViewBag.Title = "Add Education";
+}
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@Html.HiddenFor(model => model.Id)
+
+@Html.FormGroupFor(model => model.School)
+@Html.FormGroupFor(model => model.Field)
+@Html.FormGroupFor(model => model.Degree)
+@Html.FormGroupFor(model => model.FromYear)
+@Html.FormGroupFor(model => model.ToYear)
+@Html.FormGroupFor(model => model.SchoolSite)
+<input type="file" name="fileUploaded" id="fileUploaded" class="form-control" />
