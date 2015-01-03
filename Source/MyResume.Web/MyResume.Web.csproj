@@ -275,8 +275,8 @@
     <Content Include="Areas\Administration\Views\Shared\_Grid.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_GridPager.cshtml" />
     <Content Include="Areas\Administration\Views\Education\CreateEditPartial.cshtml" />
-    <Content Include="Areas\Administration\Views\Image\_DefaultImage.cshtml" />
-    <Content Include="Areas\Administration\Views\Image\_SelectedImage.cshtml" />
+    <Content Include="Areas\Administration\Views\Images\_DefaultImage.cshtml" />
+    <Content Include="Areas\Administration\Views\Images\_SelectedImage.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />

@@ -1,8 +1,10 @@
-﻿using MyResume.Web.Areas.Administration.Models.InputModels;
-using MyResume.Web.Areas.Administration.Models.ViewModels;
-using System.Collections.Generic;
-namespace MyResume.Web.Services.Contracts
+﻿namespace MyResume.Web.Services.Contracts
 {
+    using System.Collections.Generic;
+
+    using MyResume.Web.Areas.Administration.Models.InputModels;
+    using MyResume.Web.Areas.Administration.Models.ViewModels;
+    
     public interface IEducationsService : IBaseService
     {
         IEnumerable<EducationViewModel> GetAllEducations();
@@ -13,6 +15,6 @@ namespace MyResume.Web.Services.Contracts
 
         void SaveEducation(AddEditEducationInputModel input);
 
-        void DeleteSetting(int id);
+        void DeleteEducation(int id);
     }
 }

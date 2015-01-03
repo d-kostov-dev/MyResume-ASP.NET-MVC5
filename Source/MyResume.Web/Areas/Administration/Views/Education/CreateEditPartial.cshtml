@@ -7,11 +7,19 @@
 
 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 @Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.CreatedOn)
 
 @Html.FormGroupFor(model => model.School)
 @Html.FormGroupFor(model => model.Field)
 @Html.FormGroupFor(model => model.Degree)
+@Html.FormGroupFor(model => model.Description)
 @Html.FormGroupFor(model => model.FromYear)
 @Html.FormGroupFor(model => model.ToYear)
 @Html.FormGroupFor(model => model.SchoolSite)
-<input type="file" name="fileUploaded" id="fileUploaded" class="form-control" />
+
+<div class="form-group">
+    <label class="control-label col-md-2" for="Degree">Image/Logo</label>
+    <div class="col-md-10">
+        <input type="file" name="fileUploaded" id="fileUploaded" class="form-control" />
+    </div>
+</div>

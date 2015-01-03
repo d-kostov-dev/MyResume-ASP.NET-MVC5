@@ -23,12 +23,16 @@
         public string Degree { get; set; }
 
         [StringLength(1000)]
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
+        [Display(Name = "From Year")]
         public int FromYear { get; set; }
 
+        [Display(Name = "To Year")]
         public int ToYear { get; set; }
 
+        [Display(Name = "School Site URL")]
         public string SchoolSite { get; set; }
     }
 }

@@ -52,6 +52,7 @@
             if (settingToEdit != null)
             {
                 settingToEdit.Value = input.Value;
+                settingToEdit.ModifiedOn = DateTime.Now;
                 settingToEdit.Description = input.Description;
 
                 this.Data.SaveChanges();

@@ -42,11 +42,8 @@
         public void SaveEducation(AddEditEducationInputModel input)
         {
             var dbModel = Mapper.Map<Education>(input);
-
-            //var educationToEdit = this.Data.Educations.Find(dbModel.Id);
-            //educationToEdit = dbModel;
-            //this.Data
-
+            this.Data.Educations.Update(dbModel);
+            this.Data.SaveChanges();
         }
 
         public void DeleteEducation(int id)
@@ -55,7 +52,7 @@
 
             if (itemToDelete != null)
             {
-                this.Data.SiteSettings.Delete(itemToDelete);
+                this.Data.Educations.Delete(itemToDelete);
                 this.Data.SaveChanges();
             }
         }
