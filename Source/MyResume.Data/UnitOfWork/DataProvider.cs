@@ -68,7 +68,7 @@
             get { return this.GetRepository<Education>(); }
         }
 
-        public IRepository<Experience> Experiances
+        public IRepository<Experience> Experiences
         {
             get { return this.GetRepository<Experience>(); }
         }

@@ -1,7 +1,57 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@model IEnumerable<MyResume.Web.Areas.Administration.Models.ViewModels.ExperienceViewModel>
+
+@{
+    ViewBag.Title = "Experience";
 }
 
-<h2>
-    Experience
-</h2>
+@Html.Partial("_PageHeadingPartial")
+
+@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(x => x.Id)
+        .Titled("Image")
+        .RenderValueAs(x => Html.Action("ShowImage", "Images", new { id = x.ImageId }))
+        .Encoded(false)
+        .Sanitized(false);
+
+    columns.Add(x => x.CompanyName)
+        .Titled("Company")
+        .Sortable(true);
+
+    columns.Add(x => x.JobTitle)
+        .Titled("Title")
+        .Sortable(true);
+
+    columns.Add(x => x.Description)
+        .Sortable(true);
+
+    columns.Add(x => x.FromYear)
+        .Titled("From")
+        .Sortable(true);
+
+    columns.Add(x => x.ToYear)
+        .Titled("To")
+        .Sortable(true);
+
+    columns.Add(x => x.CompanySite)
+        .Titled("Site")
+        .Sortable(true);
+
+    columns.Add(x => x.Location)
+        .Titled("Location")
+        .Sortable(true);
+
+    // Buttons
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .RenderValueAs(x => Html.EditButton(x.Id.Value, isModal: true))
+        .SetWidth(50);
+
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .RenderValueAs(x => Html.DeleteButton(x.Id.Value))
+        .SetWidth(50);
+
+}).WithPaging(10)

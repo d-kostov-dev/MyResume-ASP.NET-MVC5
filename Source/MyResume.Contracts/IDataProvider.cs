@@ -27,7 +27,7 @@
 
         IRepository<Education> Educations { get; }
 
-        IRepository<Experience> Experiances { get; }
+        IRepository<Experience> Experiences { get; }
 
         IRepository<Project> Projects { get; }
 
