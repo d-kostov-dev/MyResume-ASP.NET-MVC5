@@ -204,12 +204,14 @@
     <Compile Include="Areas\Administration\Models\InputModels\AddEditCourseInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditEducationInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditExperienceInputModel.cs" />
+    <Compile Include="Areas\Administration\Models\InputModels\AddEditProjectInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditSettingInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditSkillInputModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\CertificationViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\CourseViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\EducationViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\ExperienceViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\ProjectViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\SiteSettingsViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\SkillViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs">
@@ -251,6 +253,7 @@
     <Compile Include="Services\ImagesService.cs" />
     <Compile Include="Services\SiteSettingsService.cs" />
     <Compile Include="Services\ExperiencesService.cs" />
+    <Compile Include="Services\ProjectsService.cs" />
     <Compile Include="Services\SkillsService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -273,7 +276,6 @@
     <Content Include="Areas\Administration\Views\Categories\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Education\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Posts\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\Projects\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Recommendations\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Tags\Index.cshtml" />
     <Content Include="Areas\Administration\Views\SiteSettings\Index.cshtml" />
@@ -295,6 +297,8 @@
     <Content Include="Areas\Administration\Views\Courses\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Experience\CreateEditPartial.cshtml" />
     <Content Include="Areas\Administration\Views\Experience\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Projects\CreateEditPartial.cshtml" />
+    <Content Include="Areas\Administration\Views\Projects\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />

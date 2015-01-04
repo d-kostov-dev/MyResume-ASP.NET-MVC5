@@ -65,6 +65,7 @@ namespace MyResume.Web.App_Start
             kernel.Bind<ICertificationsService>().To<CertificationsService>();
             kernel.Bind<ICoursesService>().To<CoursesService>();
             kernel.Bind<IExperiencesService>().To<ExperiencesService>();
+            kernel.Bind<IProjectsService>().To<ProjectsService>();
         }        
     }
 }

@@ -1,12 +1,13 @@
-﻿namespace MyResume.Models
+﻿namespace MyResume.Web.Areas.Administration.Models.InputModels
 {
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Project : AuditInfo
+    using MyResume.Infrastructure.Mapping;
+    using MyResume.Models;
+    using MyResume.Web.Areas.Administration.Models.Base;
+
+    public class AddEditProjectInputModel : ImagedModel, IMapFrom<Project>
     {
-        [Key]
-        public int Id { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 2)]
@@ -16,9 +17,5 @@
         public string Description { get; set; }
 
         public string URL { get; set; }
-
-        public int? ImageId { get; set; }
-
-        public virtual Image Image { get; set; }
     }
 }

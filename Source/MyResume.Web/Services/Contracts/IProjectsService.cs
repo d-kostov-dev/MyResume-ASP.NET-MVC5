@@ -1,6 +1,12 @@
 ﻿namespace MyResume.Web.Services.Contracts
 {
-    public interface IProjectsService : IBaseService
+    using MyResume.Web.Areas.Administration.Models.InputModels;
+
+    public interface IProjectsService : IBaseService, ICommonOperationsService
     {
+
+        void Add(AddEditProjectInputModel input);
+
+        void Save(AddEditProjectInputModel input);
     }
 }
