@@ -1,5 +1,41 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@model IEnumerable<MyResume.Web.Areas.Administration.Models.ViewModels.ContactInformationViewModel>
+
+@{
+    ViewBag.Title = "Contact Information";
 }
 
-<h2>Contact Information</h2>
+@Html.Partial("_PageHeadingPartial")
+
+@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(x => x.Id);
+
+    columns.Add(x => x.FirstName)
+        .Sortable(true);
+
+    columns.Add(x => x.MiddleName)
+        .Sortable(true);
+
+    columns.Add(x => x.LastName)
+        .Sortable(true);
+
+    columns.Add(x => x.PhoneNumber)
+        .Sortable(true);
+
+    columns.Add(x => x.Email)
+        .Sortable(true);
+
+    // Buttons
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .RenderValueAs(x => Html.EditButton(x.Id.Value, isModal: true))
+        .SetWidth(50);
+
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .RenderValueAs(x => Html.DeleteButton(x.Id.Value))
+        .SetWidth(50);
+
+}).WithPaging(10)

@@ -201,6 +201,7 @@
     <Compile Include="Areas\Administration\Models\Base\BaseModel.cs" />
     <Compile Include="Areas\Administration\Models\Base\ImagedModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditCertificationInputModel.cs" />
+    <Compile Include="Areas\Administration\Models\InputModels\AddEditContactInformationInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditCourseInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditEducationInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditExperienceInputModel.cs" />
@@ -208,6 +209,7 @@
     <Compile Include="Areas\Administration\Models\InputModels\AddEditSettingInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\AddEditSkillInputModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\CertificationViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\ContactInformationViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\CourseViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\EducationViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\ExperienceViewModel.cs" />
@@ -231,6 +233,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Base\BaseService.cs" />
     <Compile Include="Services\CertificationsService.cs" />
+    <Compile Include="Services\ContactInformationService.cs" />
     <Compile Include="Services\Contracts\IBaseService.cs" />
     <Compile Include="Services\Contracts\ICommonOperationsService.cs" />
     <Compile Include="Services\Contracts\IImagesService.cs" />
@@ -272,7 +275,6 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\Dashboard\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\ContactInformation\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Categories\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Education\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Posts\Index.cshtml" />
@@ -299,6 +301,8 @@
     <Content Include="Areas\Administration\Views\Experience\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Projects\CreateEditPartial.cshtml" />
     <Content Include="Areas\Administration\Views\Projects\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\ContactInformation\CreateEditPartial.cshtml" />
+    <Content Include="Areas\Administration\Views\ContactInformation\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />

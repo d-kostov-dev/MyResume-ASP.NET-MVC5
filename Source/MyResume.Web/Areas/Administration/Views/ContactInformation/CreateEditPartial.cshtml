@@ -1,0 +1,21 @@
+﻿@model MyResume.Web.Areas.Administration.Models.InputModels.AddEditContactInformationInputModel
+
+@{
+    Layout = "../Shared/_AddEditLayout.cshtml";
+    ViewBag.Title = "Add Skill";
+}
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.CreatedOn)
+
+@Html.FormGroupFor(model => model.FirstName)
+@Html.FormGroupFor(model => model.MiddleName)
+@Html.FormGroupFor(model => model.LastName)
+@Html.FormGroupFor(model => model.City)
+@Html.FormGroupFor(model => model.Email)
+@Html.FormGroupFor(model => model.FaceBook)
+@Html.FormGroupFor(model => model.LinkedIn)
+@Html.FormGroupFor(model => model.PhoneNumber)
+@Html.FormGroupFor(model => model.Skype)
+@Html.FormGroupFor(model => model.BirthDate)

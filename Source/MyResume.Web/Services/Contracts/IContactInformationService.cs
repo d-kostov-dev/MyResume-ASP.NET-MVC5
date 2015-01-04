@@ -1,6 +1,11 @@
 ﻿namespace MyResume.Web.Services.Contracts
 {
-    public interface IContactInformationService : IBaseService
+    using MyResume.Web.Areas.Administration.Models.InputModels;
+
+    public interface IContactInformationService : IBaseService, ICommonOperationsService
     {
+        void Add(AddEditContactInformationInputModel input);
+
+        void Save(AddEditContactInformationInputModel input);
     }
 }

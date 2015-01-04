@@ -5,6 +5,7 @@
 
     using MyResume.Common;
     using MyResume.Web.Services.Contracts;
+    using System.Globalization;
 
     [Authorize(Roles = GlobalConstants.AdminRole)]
     public class AdminBaseController : Controller
@@ -14,6 +15,7 @@
 
         public AdminBaseController(IBaseService dataProvider)
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             this.baseDataProvider = dataProvider;
             this.settings = this.LoadSettings();
         }
