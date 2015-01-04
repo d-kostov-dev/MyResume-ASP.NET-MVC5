@@ -1,27 +1,26 @@
 ﻿namespace MyResume.Web.Areas.Administration.Models.InputModels
 {
-    using System.Web;
     using System.ComponentModel.DataAnnotations;
 
     using MyResume.Infrastructure.Mapping;
     using MyResume.Models;
     using MyResume.Web.Areas.Administration.Models.Base;
     
-    public class AddEditCertificationInputModel : ImagedModel, IMapFrom<Certificate>
+    public class AddEditCourseInputModel : BaseModel, IMapFrom<Course>
     {
         [Required]
-        [StringLength(50, MinimumLength = 2)]
-        public string Title { get; set; }
+        [StringLength(20, MinimumLength = 2)]
+        public string Name { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 2)]
+        [StringLength(20, MinimumLength = 2)]
         public string Institution { get; set; }
 
         [StringLength(1000)]
         public string Description { get; set; }
 
-        public int IssueYear { get; set; }
+        public int FromYear { get; set; }
 
-        public string InstitutionSite { get; set; }
+        public int ToYear { get; set; }
     }
 }

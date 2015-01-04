@@ -28,13 +28,13 @@
     columns.Add()
         .Encoded(false)
         .Sanitized(false)
-        .RenderValueAs(x => Html.EditButton(x.Id, isModal: true))
+        .RenderValueAs(x => Html.EditButton(x.Id.Value, isModal: true))
         .SetWidth(50);
 
     columns.Add()
         .Encoded(false)
         .Sanitized(false)
-        .RenderValueAs(x => Html.DeleteButton(x.Id))
+        .RenderValueAs(x => Html.DeleteButton(x.Id.Value))
         .SetWidth(50);
 
 }).WithPaging(10)

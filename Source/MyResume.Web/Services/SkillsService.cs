@@ -11,7 +11,7 @@
     using MyResume.Web.Areas.Administration.Models.InputModels;
     using MyResume.Web.Services.Base;
     using MyResume.Web.Services.Contracts;
-
+    
     public class SkillsService : BaseService, ISkillsService
     {
         private IImagesService imageServices;

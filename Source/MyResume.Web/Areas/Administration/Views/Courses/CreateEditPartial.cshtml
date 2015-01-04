@@ -1,0 +1,16 @@
+﻿@model MyResume.Web.Areas.Administration.Models.InputModels.AddEditCourseInputModel
+
+@{
+    Layout = "../Shared/_AddEditLayout.cshtml";
+    ViewBag.Title = "Add Certificate";
+}
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.CreatedOn)
+
+@Html.FormGroupFor(model => model.Name)
+@Html.FormGroupFor(model => model.Description)
+@Html.FormGroupFor(model => model.Institution)
+@Html.FormGroupFor(model => model.FromYear)
+@Html.FormGroupFor(model => model.ToYear)
