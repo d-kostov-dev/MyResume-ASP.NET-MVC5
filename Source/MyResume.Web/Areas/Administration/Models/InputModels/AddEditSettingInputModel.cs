@@ -9,8 +9,6 @@
 
     public class AddEditSettingInputModel : BaseModel, IMapFrom<SiteSetting>
     {
-        public int? Id { get; set; }
-
         [Required]
         [StringLength(20, MinimumLength = 3)]
         [Index(IsUnique = true)]

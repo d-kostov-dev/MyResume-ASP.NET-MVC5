@@ -1,6 +1,14 @@
 ﻿namespace MyResume.Web.Services.Contracts
 {
-    public interface ISkillsService : IBaseService
+    using System.Collections.Generic;
+
+    using MyResume.Web.Areas.Administration.Models.InputModels;
+    using MyResume.Web.Areas.Administration.Models.ViewModels;
+
+    public interface ISkillsService : IBaseService, ICommonOperationsService
     {
+        void Add(AddEditSkillInputModel input);
+
+        void Save(AddEditSkillInputModel input);
     }
 }

@@ -21,13 +21,19 @@
         {
         }
 
-        public IEnumerable<SiteSettingsViewModel> GetAllSettings()
+        public IEnumerable<T> GetAll<T>()
         {
-            return this.Data.SiteSettings.All().OrderBy(x => x.Id).Project().To<SiteSettingsViewModel>();
+            return this.Data.SiteSettings.All().OrderBy(x => x.Id).Project().To<T>();
+        }
+
+        public T GetById<T>(int id)
+        {
+            var dbResult = this.Data.SiteSettings.All().Where(x => x.Id == id);
+            return dbResult.Project().To<T>().FirstOrDefault();
         }
 
 
-        public void AddSetting(AddEditSettingInputModel input)
+        public void Add(AddEditSettingInputModel input)
         {
             var dbModel = Mapper.Map<SiteSetting>(input);
 
@@ -35,15 +41,7 @@
             this.Data.SaveChanges();
         }
 
-
-        public AddEditSettingInputModel GetSettingById(int id)
-        {
-            var dbResult = this.Data.SiteSettings.All().Where(x => x.Id == id);
-            return dbResult.Project().To<AddEditSettingInputModel>().FirstOrDefault();
-        }
-
-
-        public void SaveSetting(AddEditSettingInputModel input)
+        public void Save(AddEditSettingInputModel input)
         {
             var dbModel = Mapper.Map<SiteSetting>(input);
 
@@ -60,7 +58,7 @@
         }
 
 
-        public void DeleteSetting(int id)
+        public void Delete(int id)
         {
             var settingToDelete = this.Data.SiteSettings.Find(id);
 

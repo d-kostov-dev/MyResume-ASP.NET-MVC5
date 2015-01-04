@@ -4,17 +4,11 @@
 
     using MyResume.Web.Areas.Administration.Models.InputModels;
     using MyResume.Web.Areas.Administration.Models.ViewModels;
-    
-    public interface IEducationsService : IBaseService
+
+    public interface IEducationsService : IBaseService, ICommonOperationsService
     {
-        IEnumerable<EducationViewModel> GetAllEducations();
+        void Add(AddEditEducationInputModel input);
 
-        AddEditEducationInputModel GetEducationById(int id);
-
-        void AddEducation(AddEditEducationInputModel input);
-
-        void SaveEducation(AddEditEducationInputModel input);
-
-        void DeleteEducation(int id);
+        void Save(AddEditEducationInputModel input);
     }
 }

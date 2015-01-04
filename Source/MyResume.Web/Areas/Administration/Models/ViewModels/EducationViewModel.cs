@@ -6,8 +6,6 @@
 
     public class EducationViewModel : BaseModel, IMapFrom<Education>
     {
-        public int Id { get; set; }
-
         public string School { get; set; }
 
         public string Field { get; set; }
@@ -20,8 +18,8 @@
 
         public int ToYear { get; set; }
 
-        public int? ImageId { get; set; }
-
         public string SchoolSite { get; set; }
+
+        public int? ImageId { get; set; }
     }
 }

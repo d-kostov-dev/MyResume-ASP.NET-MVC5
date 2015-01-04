@@ -1,5 +1,40 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@model IEnumerable<MyResume.Web.Areas.Administration.Models.ViewModels.SkillViewModel>
+
+@{
+    ViewBag.Title = "Skills";
 }
 
-<h2>Skills</h2>
+@Html.Partial("_PageHeadingPartial")
+
+@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(x => x.Id)
+        .Titled("Image")
+        .RenderValueAs(x => Html.Action("ShowImage", "Images", new { id = x.ImageId }))
+        .Encoded(false)
+        .Sanitized(false);
+
+    columns.Add(x => x.Name)
+        .Sortable(true);
+
+    columns.Add(x => x.Level)
+        .Sortable(true);
+
+    columns.Add(x => x.YearsOfExperience)
+        .Titled("Experience")
+        .Sortable(true);
+
+    // Buttons
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .RenderValueAs(x => Html.EditButton(x.Id, isModal: true))
+        .SetWidth(50);
+
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .RenderValueAs(x => Html.DeleteButton(x.Id))
+        .SetWidth(50);
+
+}).WithPaging(10)

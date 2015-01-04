@@ -6,11 +6,9 @@
     using MyResume.Infrastructure.Mapping;
     using MyResume.Models;
     using MyResume.Web.Areas.Administration.Models.Base;
-    
-    public class AddEditEducationInputModel : BaseModel,  IMapFrom<Education>
-    {
-        public int? Id { get; set; }
 
+    public class AddEditEducationInputModel : ImagedModel, IMapFrom<Education>
+    {
         [Required]
         [StringLength(50, MinimumLength = 2)]
         public string School { get; set; }
@@ -34,9 +32,5 @@
 
         [Display(Name = "School Site URL")]
         public string SchoolSite { get; set; }
-
-        public HttpPostedFileBase FileUploaded { get; set; }
-
-        public int? ImageId { get; set; }
     }
 }

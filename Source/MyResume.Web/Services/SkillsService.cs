@@ -9,15 +9,14 @@
     using MyResume.Contracts;
     using MyResume.Models;
     using MyResume.Web.Areas.Administration.Models.InputModels;
-    using MyResume.Web.Areas.Administration.Models.ViewModels;
     using MyResume.Web.Services.Base;
     using MyResume.Web.Services.Contracts;
 
-    public class EducationsService : BaseService, IEducationsService
+    public class SkillsService : BaseService, ISkillsService
     {
         private IImagesService imageServices;
 
-        public EducationsService(IDataProvider provider, IImagesService imageServices)
+        public SkillsService(IDataProvider provider, IImagesService imageServices)
             : base(provider)
         {
             this.imageServices = imageServices;
@@ -25,31 +24,31 @@
 
         public IEnumerable<T> GetAll<T>()
         {
-            return this.Data.Educations.All().OrderBy(x => x.Id).Project().To<T>();
+            return this.Data.Skills.All().OrderBy(x => x.Id).Project().To<T>();
         }
 
         public T GetById<T>(int id)
         {
-            var dbResult = this.Data.Educations.All().Where(x => x.Id == id);
+            var dbResult = this.Data.Skills.All().Where(x => x.Id == id);
             return dbResult.Project().To<T>().FirstOrDefault();
         }
 
-        public void Add(AddEditEducationInputModel input)
+        public void Add(AddEditSkillInputModel input)
         {
-            var dbModel = Mapper.Map<Education>(input);
+            var dbModel = Mapper.Map<Skill>(input);
 
             if (input.FileUploaded != null)
             {
                 dbModel.ImageId = imageServices.Save(input.FileUploaded);
             }
 
-            this.Data.Educations.Add(dbModel);
+            this.Data.Skills.Add(dbModel);
             this.Data.SaveChanges();
         }
 
-        public void Save(AddEditEducationInputModel input)
+        public void Save(AddEditSkillInputModel input)
         {
-            var dbModel = Mapper.Map<Education>(input);
+            var dbModel = Mapper.Map<Skill>(input);
 
             if (input.FileUploaded != null)
             {
@@ -62,18 +61,18 @@
                 dbModel.ImageId = imageServices.Save(input.FileUploaded);
             }
 
-            this.Data.Educations.Update(dbModel);
+            this.Data.Skills.Update(dbModel);
             this.Data.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            var itemToDelete = this.Data.Educations.Find(id);
+            var itemToDelete = this.Data.Skills.Find(id);
 
             if (itemToDelete != null)
             {
                 this.Data.Images.Delete(this.Data.Images.Find(itemToDelete.ImageId));
-                this.Data.Educations.Delete(itemToDelete);
+                this.Data.Skills.Delete(itemToDelete);
                 this.Data.SaveChanges();
             }
         }

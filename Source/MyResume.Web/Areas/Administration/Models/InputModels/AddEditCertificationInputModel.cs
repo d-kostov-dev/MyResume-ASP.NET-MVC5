@@ -1,12 +1,15 @@
-﻿namespace MyResume.Models
+﻿namespace MyResume.Web.Areas.Administration.Models.InputModels
 {
+    using System.Web;
+
+    using MyResume.Infrastructure.Mapping;
+    using MyResume.Models;
+    using MyResume.Web.Areas.Administration.Models.Base;
     using System.ComponentModel.DataAnnotations;
 
-    public class Certificate : AuditInfo
-    {
-        [Key]
-        public int Id { get; set; }
 
+    public class AddEditCertificationInputModel : ImagedModel, IMapFrom<Certificate>
+    {
         [Required]
         [StringLength(50, MinimumLength = 2)]
         public string Title { get; set; }
@@ -21,9 +24,5 @@
         public int IssueYear { get; set; }
 
         public string InstitutionSite { get; set; }
-
-        public int? ImageId { get; set; }
-
-        public virtual Image Image { get; set; }
     }
 }

@@ -9,6 +9,7 @@
     using MyResume.Models;
     using System.Web.Mvc;
     using System.Web;
+    using System.Data.Entity;
 
     public abstract class BaseService : IBaseService
     {

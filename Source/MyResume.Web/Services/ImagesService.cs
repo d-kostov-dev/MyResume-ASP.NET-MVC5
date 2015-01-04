@@ -5,6 +5,7 @@
     using MyResume.Web.Services.Base;
     using MyResume.Web.Services.Contracts;
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Web;
@@ -16,13 +17,13 @@
         {
         }
 
-        public Image GetImageById(int id)
+        public Image GetById(int id)
         {
             return this.Data.Images.Find(id);
         }
 
 
-        public int SaveImage(HttpPostedFileBase image)
+        public int Save(HttpPostedFileBase image)
         {
             using (var memory = new MemoryStream())
             {
@@ -44,7 +45,7 @@
         }
 
 
-        public void DeleteImage(int id)
+        public void Delete(int id)
         {
             this.Data.Images.Delete(this.Data.Images.Find(id));
             this.Data.SaveChanges();

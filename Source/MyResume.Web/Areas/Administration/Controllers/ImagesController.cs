@@ -17,7 +17,7 @@
 
         public ActionResult GetImageById(int id)
         {
-            var image = this.dataProvider.GetImageById(id);
+            var image = this.dataProvider.GetById(id);
 
             if (image == null)
             {
