@@ -5,7 +5,6 @@
     using MyResume.Infrastructure.Mapping;
     using MyResume.Models;
     using MyResume.Web.Areas.Administration.Models.Base;
-    using System.Web.Mvc;
 
     public class AddEditProjectInputModel : ImagedModel, IMapFrom<Project>
     {
@@ -15,8 +14,6 @@
         public string Name { get; set; }
 
         [StringLength(1000)]
-        [DataType(DataType.MultilineText)]
-        [AllowHtml]
         public string Description { get; set; }
 
         public string URL { get; set; }

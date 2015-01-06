@@ -1,39 +1,7 @@
-﻿@model IEnumerable<MyResume.Web.Areas.Administration.Models.ViewModels.EducationViewModel>
-
+﻿
 @{
     ViewBag.Title = "Education";
 }
 
 <h2>Education</h2>
-<hr />
 
-@foreach (var item in Model)
-{
-    <div class="panel panel-default">
-        <div class="panel-heading">@item.School <span class="pull-right">@item.FromYear - @item.ToYear</span></div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-2">
-                    @Html.Action("ShowImage", "Images", new { area = "Administration", id = item.ImageId })
-                </div>
-                <div class="col-md-5">
-                    <div class="bs-component">
-                        @Html.Raw(item.Description)
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="bs-component">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                Field: <strong>@item.Field</strong>
-                            </li>
-                            <li class="list-group-item">
-                                Degree: <strong>@item.Degree</strong>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-}

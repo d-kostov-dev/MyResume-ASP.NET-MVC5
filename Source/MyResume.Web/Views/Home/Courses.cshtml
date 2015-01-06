@@ -1,33 +1,7 @@
-﻿@model IEnumerable<MyResume.Web.Areas.Administration.Models.ViewModels.CourseViewModel>
-
+﻿
 @{
     ViewBag.Title = "Courses";
 }
 
 <h2>Courses</h2>
-<hr />
 
-@foreach (var item in Model)
-{
-    <div class="panel panel-default">
-        <div class="panel-heading">@item.Name <span class="pull-right">@item.FromYear - @item.ToYear</span></div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="bs-component">
-                        @Html.Raw(item.Description)
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="bs-component">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                               <strong>@item.Institution</strong>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-}

@@ -1,26 +1,7 @@
-﻿@model IEnumerable<MyResume.Web.Areas.Administration.Models.ViewModels.SkillViewModel>
+﻿
 @{
     ViewBag.Title = "Skills";
 }
 
 <h2>Skills</h2>
-<hr />
 
-@foreach (var item in Model)
-{
-    <div class="panel panel-default">
-        <div class="panel-heading"><strong>@item.Name</strong> <span class="pull-right">Experience: <strong>@item.YearsOfExperience</strong> year/s</span></div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-4"><span class="pull-left">Beginner</span></div>
-                <div class="col-md-4"><p class="text-center">Average</p></div>
-                <div class="col-md-4"><span class="pull-right">Expert</span></div>
-            </div>
-            <div class="bs-component">
-                <div class="progress progress-striped active">
-                    <div class="progress-bar" style="width: @item.Level%"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-}

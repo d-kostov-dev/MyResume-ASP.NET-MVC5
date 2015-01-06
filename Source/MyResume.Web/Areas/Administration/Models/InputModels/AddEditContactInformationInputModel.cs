@@ -19,9 +19,6 @@
         [StringLength(20, MinimumLength = 2)]
         public string LastName { get; set; }
 
-        [DataType(DataType.MultilineText)]
-        public string Description { get; set; }
-
         [Required]
         [StringLength(20, MinimumLength = 2)]
         public string Email { get; set; }
@@ -42,8 +39,5 @@
 
         [StringLength(20, MinimumLength = 3)]
         public string Skype { get; set; }
-
-        [StringLength(100, MinimumLength = 10)]
-        public string GitHub { get; set; }
     }
 }

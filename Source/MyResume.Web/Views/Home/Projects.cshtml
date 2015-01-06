@@ -1,25 +1,7 @@
-﻿@model IEnumerable<MyResume.Web.Areas.Administration.Models.ViewModels.ProjectViewModel>
+﻿
 @{
     ViewBag.Title = "Projects";
 }
 
 <h2>Projects</h2>
 
-@foreach (var item in Model)
-{
-    <div class="panel panel-default">
-        <div class="panel-heading"><a href="@item.URL">@item.Name</a></div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-4">
-                    @Html.Action("ShowImage", "Images", new { area = "Administration", id = item.ImageId })
-                </div>
-                <div class="col-md-8">
-                    <div class="bs-component">
-                        @Html.Raw(item.Description)
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-}
