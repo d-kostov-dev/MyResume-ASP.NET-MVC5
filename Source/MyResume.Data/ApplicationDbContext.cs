@@ -22,6 +22,8 @@
 
         public IDbSet<Image> Images { get; set; }
 
+        public IDbSet<Contact> Contacts { get; set; }
+
         public IDbSet<Category> Categories { get; set; }
 
         public IDbSet<Tag> Tags { get; set; }

@@ -1,5 +1,39 @@
-﻿@{
+﻿@model IEnumerable<MyResume.Web.Areas.Administration.Models.ViewModels.ExperienceViewModel>
+
+@{
     ViewBag.Title = "Experience";
 }
 
 <h2>Experience</h2>
+<hr />
+
+@foreach (var item in Model)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">@item.JobTitle <span class="pull-right">@item.FromYear - @item.ToYear</span></div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    @Html.Action("ShowImage", "Images", new { area = "Administration", id = item.ImageId })
+                </div>
+                <div class="col-md-6">
+                    <div class="bs-component">
+                        @Html.Raw(item.Description)
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bs-component">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Company: <strong>@item.CompanyName</strong>
+                            </li>
+                            <li class="list-group-item">
+                                Location: <strong>@item.Location</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

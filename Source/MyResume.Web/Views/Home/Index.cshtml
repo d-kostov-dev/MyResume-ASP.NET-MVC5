@@ -1,5 +1,41 @@
-﻿@{
+﻿@model MyResume.Web.Areas.Administration.Models.ViewModels.ContactInformationViewModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<h2>About</h2>
+<h2>About Me</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <div class="bs-component">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Name: <strong>@Model.FirstName @Model.MiddleName @Model.LastName</strong>
+                </li>
+                <li class="list-group-item">
+                    From: <strong>@Model.City</strong>
+                </li>
+                <li class="list-group-item">
+                    Birth Date: <strong>@Model.BirthDate.Value.ToString("dd.MM.yyyy")</strong>
+                </li>
+                <li class="list-group-item">
+                    <a href="@Model.LinkedIn">LinkedIn</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="@Model.GitHub">GitHub</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="@Model.FaceBook">FaceBook</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="bs-component">
+            <div class="well well-sm">
+                @Model.Description
+            </div>
+        </div>
+    </div>
+</div>

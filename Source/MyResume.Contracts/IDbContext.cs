@@ -14,6 +14,8 @@
 
         IDbSet<Image> Images { get; set; }
 
+        IDbSet<Contact> Contacts { get; set; }
+
         // Blog
         IDbSet<Category> Categories { get; set; }
 

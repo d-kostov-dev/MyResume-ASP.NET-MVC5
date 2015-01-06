@@ -6,6 +6,7 @@
     using MyResume.Infrastructure.Mapping;
     using MyResume.Models;
     using MyResume.Web.Areas.Administration.Models.Base;
+    using System.Web.Mvc;
     
     public class AddEditCertificationInputModel : ImagedModel, IMapFrom<Certificate>
     {
@@ -18,6 +19,8 @@
         public string Institution { get; set; }
 
         [StringLength(1000)]
+        [DataType(DataType.MultilineText)]
+        [AllowHtml]
         public string Description { get; set; }
 
         public int IssueYear { get; set; }

@@ -58,6 +58,7 @@
     <Compile Include="Blog\Category.cs" />
     <Compile Include="Blog\Post.cs" />
     <Compile Include="Blog\Tag.cs" />
+    <Compile Include="Contact.cs" />
     <Compile Include="Resume\Certificate.cs" />
     <Compile Include="Resume\Course.cs" />
     <Compile Include="Resume\Education.cs" />

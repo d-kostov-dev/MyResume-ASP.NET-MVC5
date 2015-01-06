@@ -14,6 +14,8 @@
 
         public string LastName { get; set; }
 
+        public string Description { get; set; }
+
         public string Email { get; set; }
 
         public string City { get; set; }
@@ -27,5 +29,7 @@
         public string FaceBook { get; set; }
 
         public string Skype { get; set; }
+
+        public string GitHub { get; set; }
     }
 }
