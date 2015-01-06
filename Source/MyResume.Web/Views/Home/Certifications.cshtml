@@ -1,6 +1,20 @@
-﻿
+﻿@model IEnumerable<MyResume.Web.Areas.Administration.Models.ViewModels.CertificationViewModel>
+
 @{
     ViewBag.Title = "Certifications";
 }
 
 <h2>Certifications</h2>
+<hr />
+
+@foreach (var item in Model)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading"><a href="@item.InstitutionSite">@item.Title</a> <span class="pull-right">@item.Institution - @item.IssueYear</span></div>
+        <div class="panel-body">
+            <div class="row">
+                @Html.Action("ShowImage", "Images", new { area = "Administration", id = item.ImageId })
+            </div>
+        </div>
+    </div>
+}

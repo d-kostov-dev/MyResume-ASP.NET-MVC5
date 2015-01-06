@@ -13,6 +13,8 @@
 
         IRepository<Image> Images { get; }
 
+        IRepository<Contact> Contacts { get; }
+
         // Blog
         IRepository<Category> Categories { get; }
 

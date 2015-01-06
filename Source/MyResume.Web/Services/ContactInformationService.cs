@@ -11,6 +11,7 @@
     using MyResume.Web.Areas.Administration.Models.InputModels;
     using MyResume.Web.Services.Base;
     using MyResume.Web.Services.Contracts;
+    using MyResume.Web.Areas.Administration.Models.ViewModels;
 
     public class ContactInformationService : BaseService, IContactInformationService
     {
@@ -55,6 +56,11 @@
                 this.Data.ContactInformation.Delete(itemToDelete);
                 this.Data.SaveChanges();
             }
+        }
+
+        public ContactInformationViewModel GetFirst()
+        {
+            return this.Data.ContactInformation.All().OrderBy(x => x.Id).Project().To<ContactInformationViewModel>().FirstOrDefault();
         }
     }
 }

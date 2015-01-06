@@ -38,6 +38,11 @@
             get { return this.GetRepository<Image>(); }
         }
 
+        public IRepository<Contact> Contacts
+        {
+            get { return this.GetRepository<Contact>(); }
+        }
+
         public IRepository<Category> Categories
         {
             get { return this.GetRepository<Category>(); }

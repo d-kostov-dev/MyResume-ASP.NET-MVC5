@@ -67,6 +67,7 @@ namespace MyResume.Web.App_Start
             kernel.Bind<IExperiencesService>().To<ExperiencesService>();
             kernel.Bind<IProjectsService>().To<ProjectsService>();
             kernel.Bind<IContactInformationService>().To<ContactInformationService>();
+            kernel.Bind<IContactsService>().To<ContactsService>();
         }        
     }
 }
