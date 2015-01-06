@@ -6,6 +6,7 @@
     using MyResume.Infrastructure.Mapping;
     using MyResume.Models;
     using MyResume.Web.Areas.Administration.Models.Base;
+    using System.Web.Mvc;
     
     public class AddEditContactInformationInputModel : BaseModel, IMapFrom<ContactInformation>
     {
@@ -20,10 +21,11 @@
         public string LastName { get; set; }
 
         [DataType(DataType.MultilineText)]
+        [AllowHtml]
         public string Description { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 2)]
+        [StringLength(50, MinimumLength = 2)]
         public string Email { get; set; }
 
         [Required]

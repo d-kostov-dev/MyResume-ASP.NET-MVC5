@@ -8,11 +8,11 @@
         public int Id { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 2)]
+        [StringLength(50, MinimumLength = 2)]
         public string Name { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 2)]
+        [StringLength(50, MinimumLength = 2)]
         public string Institution { get; set; }
 
         [StringLength(1000)]

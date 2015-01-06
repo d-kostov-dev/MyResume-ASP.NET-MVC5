@@ -5,6 +5,7 @@
     using MyResume.Web.Services.Contracts;
     using System.Web;
 
+    [AllowAnonymous]
     public class ImagesController : AdminBaseController
     {
         private IImagesService dataProvider;
